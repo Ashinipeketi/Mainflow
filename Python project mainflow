@@ -1,1 +1,73 @@
 
+import pandas as pd 
+# reading the database 
+data pd.read_csv("tips .csv" ) 
+# print ing the top 10 rows 
+print(data.head(10))
+# reading the database 
+
+plt.scatter(data['day'], data['tip'], c=data['size'], 
+
+            s=data['total_bill'])
+ 
+# Adding Title to the Plot
+
+plt.title("Scatter Plot")
+ 
+# Setting the X and Y labels
+
+plt.xlabel('Day')
+
+plt.ylabel('Tip')
+ 
+plt.colorbar()
+ 
+plt.show()
+plt.scatter(data['day'], data['tip'])
+ 
+# Adding Title to the Plot
+
+plt.title("Scatter Plot")
+ 
+# Setting the X and Y labels
+
+plt.xlabel('Day')
+
+plt.ylabel('Tip')
+ 
+plt.show()
+plt.plot(data['tip'])
+
+plt.plot(data['size'])
+ 
+# Adding Title to the Plot
+
+plt.title("Scatter Plot")
+ 
+# Setting the X and Y labels
+
+plt.xlabel('Day')
+
+plt.ylabel('Tip')
+ 
+plt.show()
+plt.bar(data['day'], data['tip'])
+ 
+
+plt.title("Bar Chart")
+ 
+# Setting the X and Y labels
+
+plt.xlabel('Day')
+
+plt.ylabel('Tip')
+ 
+# Adding the legends
+plt.show()
+plt.hist(data['total_bill'])
+ 
+
+plt.title("Histogram")
+ 
+# Adding the legends
+plt.show()
