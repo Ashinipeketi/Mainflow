@@ -1,0 +1,27 @@
+ import numpy as np
+import pandas pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from seaborn import load_dataset
+#titanic dataset
+data = pd.read_csv("titanic_tragin.csv")
+#tips dataset
+tips = load_dataset("tips")
+data['Gender'].Nove_counts().plot(kind="pie")
+plt.show()
+plt.hist(data['Age'], bins=5)
+plt.show()
+sns.distplot(data['Age']) 
+plt.show()
+sns.scatterplot(tips["total_bill"], tips["tip"])
+plt.show()
+sns.barplot(data['Pclass'], data['Age'])
+plt.show()
+sns.boxplot(data['Gender'], data["Age"])
+plt.show()
+sns.distplot(data[data['Survived'] == 0]['Age'], hist=False, color="blue") 
+sns.distplot(data[data['Survived'] == 1]['Age'], hist=False, color="orange")
+plt.show()
+sns.heatmap(pd.crosstab(data['Pclass'], data['Survived']))
+sns.clustermap(pd.crosstab(data['Parch'], data['Survived']))
+plt.show()
