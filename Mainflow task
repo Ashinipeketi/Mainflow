@@ -1,0 +1,39 @@
+import pandas as pd
+from statsmodels.tsa.seasonal import seasonal_decompose
+
+# Load time series data
+data = pd.read_csv('time_series_data.csv')
+
+# Perform decomposition to identify trends and seasonality
+result = seasonal_decompose(data['value'], model='additive', period=12)
+
+# Plot decomposition
+result.plot()
+
+from nltk.sentiment import SentimentIntensityAnalyzer
+
+# Sample text for sentiment analysis
+text = "I love watching movies on Disney Plus!"
+
+# Initialize sentiment analyzer
+sia = SentimentIntensityAnalyzer()
+
+# Analyze sentiment
+sentiment_score = sia.polarity_scores(text)
+print(sentiment_score)
+
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+
+# Load and preprocess data
+data = pd.read_csv('clustering_data.csv')
+scaler = StandardScaler()
+scaled_data = scaler.fit_transform(data)
+
+# Perform K-means clustering
+kmeans = KMeans(n_clusters=3, random_state=42)
+kmeans.fit(scaled_data)
+
+# Get cluster labels
+cluster_labels = kmeans.labels_
+print(cluster_labels)
